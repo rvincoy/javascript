@@ -94,7 +94,11 @@ const compareCards = (e) => {
       console.log(document.querySelectorAll(".toggleCard"));
       const toggleCards = document.querySelectorAll(".toggleCard");
       if (toggleCards.length === 32 && gameMessage=="") {
-        gameMessage=resultGame(" You finished in " + playMoves + " moves. Refresh to restart the game. ", 5);
+        try { //this is the error handling part of the program
+          gameMessage=resultGame(" You finished in " + playMoves + " moves. Refresh to restart the game. ", 5);
+        } catch (e) {
+          console.log(e);
+        }
       }
     } else {
       console.log("not matched");
