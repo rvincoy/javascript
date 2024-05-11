@@ -19,7 +19,7 @@ Firefox Browser 125.0.3 (64-bit)
 
 - [W3School's Javascript tutorial](https://www.w3schools.com/js/default.asp)
 - [Youtube Tutorial on similar program](https://www.youtube.com/watch?v=-tlb4tv4mC4&t=2728s)
-- [Github of unfinished memory game talked about in the video link above](https://github.com/developedbyed/memory-game)
+- [Github of unfinished memory game](https://github.com/developedbyed/memory-game)
 - [Chart JS ](https://www.chartjs.org/docs/latest/getting-started/)
 
 # Future Work
