@@ -96,6 +96,19 @@ const compareCards = (e) => {
       if (toggleCards.length === 32 && gameMessage=="") {
         try { //this is the error handling part of the program
           gameMessage=resultGame(" You finished in " + playMoves + " moves. Refresh to restart the game. ", 5);
+          let previousHigh = getCookie();
+          console.log(previousHigh);
+          if (previousHigh==undefined) {
+            setCookie("topScore",playMoves,300);
+            gameMessage=resultGame("Setting your high score to " + playMoves + ". ", 3);
+            console.log(document.cookie);
+          } else {
+            if (parseInt(previousHigh) > playMoves) {
+              setCookie("topScore",playMoves,300);
+              gameMessage=resultGame("You beat your previous high score of" + previousHigh + ". ", 3);
+              console.log(document.cookie);
+            }
+          }
         } catch (e) {
           console.log(e);
         }
@@ -126,3 +139,18 @@ function resultGame(gameMessage, starCount) {
     return gameMessage;
   }
 }
+
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie() {
+  const decode = decodeURIComponent(document.cookie);
+  const array1 = decode.split(";");
+  const array2 = array1[0].split("=");
+  const cvalue = array2[1];
+  return cvalue;
+  }
