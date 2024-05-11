@@ -12,6 +12,7 @@ Enjoy. Happy gaming.
 # Development Environment
 
 Visual Studio Code 1.88.1
+
 Firefox Browser 125.0.3 (64-bit)
 
 # Useful Websites
